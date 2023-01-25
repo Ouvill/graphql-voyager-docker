@@ -14,7 +14,7 @@ async function read_schema(path: string) {
 }
 
 async function main() {
-  const port = process.env.PORT || 3000;
+  const port = process.env.PORT || 80;
   const ENDPOINT_URL = process.env.ENDPOINT_URL;
   const SCHEMA = process.env.SCHEMA;
   const schema_path = process.env.SCHEMA_PATH || "/app/schema.graphql";

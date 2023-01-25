@@ -14,4 +14,4 @@ COPY --from=build /app/node_modules ./node_modules
 COPY --from=build /app/package.json /app/package-lock.json ./
 CMD npm run start
 
-EXPOSE 3000
+EXPOSE 80
