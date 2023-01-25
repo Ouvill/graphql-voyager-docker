@@ -1,4 +1,4 @@
-FROM node:alpine as build
+FROM node:lts-slim as build
 
 WORKDIR /app
 ADD package.json package-lock.json ./
@@ -7,7 +7,7 @@ RUN npm ci
 ADD . .
 RUN npm run build
 
-FROM node:alpine as prod
+FROM node:lts-slim as prod
 WORKDIR /app
 COPY --from=build /app/dist ./dist
 COPY --from=build /app/node_modules ./node_modules
